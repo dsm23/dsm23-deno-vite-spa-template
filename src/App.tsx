@@ -1,6 +1,6 @@
 import { Button } from "~/components/button/index.tsx";
-// import { ThemeProvider } from "~/components/theme-provider";
-// import { ThemeSwitcher } from "~/components/theme-switcher";
+import { ThemeProvider } from "~/components/theme-provider/index.tsx";
+import { ThemeSwitcher } from "~/components/theme-switcher/index.tsx";
 
 const LP_GRID_ITEMS = [
   {
@@ -437,7 +437,7 @@ const LP_GRID_ITEMS = [
 ];
 
 const App = () => (
-  <>
+  <ThemeProvider>
     <main>
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
@@ -491,12 +491,10 @@ const App = () => (
         </div>
       </section>
     </main>
-    {
-      /* <footer className="mx-auto flex w-full items-center justify-center border-t py-16 text-center text-xs">
+    <footer className="mx-auto flex w-full items-center justify-center border-t py-16 text-center text-xs">
       <ThemeSwitcher />
-    </footer> */
-    }
-  </>
+    </footer>
+  </ThemeProvider>
 );
 
 export default App;
