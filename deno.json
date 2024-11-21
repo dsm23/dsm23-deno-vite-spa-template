@@ -1,6 +1,8 @@
 {
   "imports": {
+    "@axe-core/playwright": "npm:@axe-core/playwright@^4.10.1",
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
+    "@playwright/test": "npm:@playwright/test@^1.49.0",
     "@types/react": "npm:@types/react@^18.3.11",
     "@types/react-dom": "npm:@types/react-dom@^18.3.1",
     "@vitejs/plugin-react-swc": "npm:@vitejs/plugin-react-swc@^3.7.1",
@@ -15,7 +17,8 @@
     "dev": "deno run -A --node-modules-dir npm:vite",
     "build": "deno run -A --node-modules-dir npm:vite build",
     "preview": "deno run -A --node-modules-dir npm:vite preview",
-    "serve": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/"
+    "serve": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/",
+    "e2e": "deno run -A npm:@playwright/test test"
   },
   "compilerOptions": {
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
