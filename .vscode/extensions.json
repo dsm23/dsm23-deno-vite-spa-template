@@ -1,6 +1,8 @@
 {
   "recommendations": [
-    "denoland.vscode-deno"
+    "denoland.vscode-deno",
+    "joshbolduc.commitlint",
+    "ms-playwright.playwright"
   ],
   "unwantedRecommendations": []
 }

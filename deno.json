@@ -1,6 +1,9 @@
 {
   "imports": {
     "@axe-core/playwright": "npm:@axe-core/playwright@^4.10.1",
+    "@commitlint/cli": "npm:@commitlint/cli@^19.6.0",
+    "@commitlint/config-conventional": "npm:@commitlint/config-conventional@^19.6.0",
+    "@commitlint/types": "npm:@commitlint/types@^19.5.0",
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
     "@playwright/test": "npm:@playwright/test@^1.49.0",
     "@types/react": "npm:@types/react@^18.3.11",
