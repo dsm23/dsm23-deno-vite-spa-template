@@ -9,7 +9,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <main>
       <img src="/vite-deno.svg" alt="Vite with Deno" />
       <div>
         <a href="https://vitejs.dev" target="_blank">
@@ -31,7 +31,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
+    </main>
   );
 }
 

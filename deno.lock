@@ -1,7 +1,10 @@
 {
   "version": "4",
   "specifiers": {
+    "npm:@axe-core/playwright@^4.10.1": "4.10.1_playwright-core@1.49.0",
     "npm:@deno/vite-plugin@1": "1.0.0_vite@5.4.11__@types+node@22.5.4_@types+node@22.5.4",
+    "npm:@playwright/test@*": "1.49.0",
+    "npm:@playwright/test@^1.49.0": "1.49.0",
     "npm:@types/node@*": "22.5.4",
     "npm:@types/react-dom@^18.3.1": "18.3.1",
     "npm:@types/react@^18.3.11": "18.3.12",
@@ -15,6 +18,13 @@
     "npm:vite@^5.4.11": "5.4.11_@types+node@22.5.4"
   },
   "npm": {
+    "@axe-core/playwright@4.10.1_playwright-core@1.49.0": {
+      "integrity": "sha512-EV5t39VV68kuAfMKqb/RL+YjYKhfuGim9rgIaQ6Vntb2HgaCaau0h98Y3WEUqW1+PbdzxDtDNjFAipbtZuBmEA==",
+      "dependencies": [
+        "axe-core",
+        "playwright-core"
+      ]
+    },
     "@babel/code-frame@7.26.2": {
       "integrity": "sha512-RJlIHRueQgwWitWgF8OdFYGZX328Ax5BCemNGlqHfplnRT9ESi8JkFlvaVYbS+UubVY6dpv87Fs2u5M29iNFVQ==",
       "dependencies": [
@@ -235,6 +245,12 @@
       "dependencies": [
         "@nodelib/fs.scandir",
         "fastq"
+      ]
+    },
+    "@playwright/test@1.49.0": {
+      "integrity": "sha512-DMulbwQURa8rNIQrf94+jPJQ4FmOVdpE5ZppRNvWVjvhC+6sOeo28r8MgIpQRYouXRtt/FCCXU7zn20jnHR4Qw==",
+      "dependencies": [
+        "playwright"
       ]
     },
     "@rollup/rollup-android-arm-eabi@4.22.4": {
@@ -503,6 +519,9 @@
     },
     "at-least-node@1.0.0": {
       "integrity": "sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg=="
+    },
+    "axe-core@4.10.2": {
+      "integrity": "sha512-RE3mdQ7P3FRSe7eqCWoeQ/Z9QXrtniSjp1wUjt5nRC3WIpz5rSCve6o3fsZ2aCpJtrZjSZgjwXAoTO5k4tEI0w=="
     },
     "balanced-match@1.0.2": {
       "integrity": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
@@ -1047,6 +1066,9 @@
     },
     "fs.realpath@1.0.0": {
       "integrity": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
+    },
+    "fsevents@2.3.2": {
+      "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
     },
     "fsevents@2.3.3": {
       "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw=="
@@ -1810,6 +1832,16 @@
         "find-up@5.0.0"
       ]
     },
+    "playwright-core@1.49.0": {
+      "integrity": "sha512-R+3KKTQF3npy5GTiKH/T+kdhoJfJojjHESR1YEWhYuEKRVfVaxH3+4+GvXE5xyCngCxhxnykk0Vlah9v8fs3jA=="
+    },
+    "playwright@1.49.0": {
+      "integrity": "sha512-eKpmys0UFDnfNb3vfsf8Vx2LEOtflgRebl0Im2eQQnYMA4Aqd+Zw8bEOB+7ZKvN76901mRnqdsiOGKxzVTbi7A==",
+      "dependencies": [
+        "fsevents@2.3.2",
+        "playwright-core"
+      ]
+    },
     "please-upgrade-node@3.2.0": {
       "integrity": "sha512-gQR3WpIgNIKwBMVLkpMUeR3e1/E1y42bqDQZfql+kDeXd8COYfM8PQA4X6y7a8u9Ua9FHmsrrmirW2vHs45hWg==",
       "dependencies": [
@@ -2003,7 +2035,7 @@
         "@rollup/rollup-win32-ia32-msvc",
         "@rollup/rollup-win32-x64-msvc",
         "@types/estree",
-        "fsevents"
+        "fsevents@2.3.3"
       ]
     },
     "run-async@2.4.1": {
@@ -2266,7 +2298,7 @@
       "dependencies": [
         "@types/node",
         "esbuild",
-        "fsevents",
+        "fsevents@2.3.3",
         "postcss",
         "rollup"
       ]
@@ -2387,7 +2419,9 @@
   },
   "workspace": {
     "dependencies": [
+      "npm:@axe-core/playwright@^4.10.1",
       "npm:@deno/vite-plugin@1",
+      "npm:@playwright/test@^1.49.0",
       "npm:@types/react-dom@^18.3.1",
       "npm:@types/react@^18.3.11",
       "npm:@vitejs/plugin-react-swc@^3.7.1",
