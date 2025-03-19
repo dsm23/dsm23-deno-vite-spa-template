@@ -14,20 +14,28 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v2
+        uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
         with:
           egress-policy: audit
-      - name: Git checkout
-        uses: actions/checkout@v4
+
+      - name: Git Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
       - name: Setup deno
-        uses: denoland/setup-deno@v2
+        uses: denoland/setup-deno@909cc5acb0fdd60627fb858598759246509fa755 # v2.0.2
         with:
           deno-version-file: .dvmrc
+
       - name: Install dependencies
         run: deno install --frozen
+
       - name: Format check
         run: deno fmt --check
+
       - name: Lint check
         run: deno lint
+
       - name: Build
         run: deno task build
