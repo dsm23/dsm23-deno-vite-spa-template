@@ -38,6 +38,10 @@
       "matchUpdateTypes": ["digest", "patch", "minor", "major"]
     }
   ],
+  "enabledManagers": ["dockerfile", "github-actions"],
   "rebaseWhen": "conflicted",
+  "patch": {
+    "rebaseWhen": "behind-base-branch"
+  },
   "osvVulnerabilityAlerts": true
 }
