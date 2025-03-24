@@ -2,6 +2,7 @@
   "recommendations": [
     "denoland.vscode-deno",
     "joshbolduc.commitlint",
+    "ms-azuretools.vscode-docker",
     "ms-playwright.playwright"
   ],
   "unwantedRecommendations": []
