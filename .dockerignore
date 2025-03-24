@@ -1,0 +1,10 @@
+*
+!dist/
+!nginx/
+!public/
+!src/
+!deno.json
+!deno.lock
+!index.html
+!vite.config.ts
+!patches/

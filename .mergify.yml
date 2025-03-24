@@ -3,13 +3,14 @@ pull_request_rules:
   - name: automatic approval
     conditions:
       - author=dsm23
+      - check-success=amd64
       - check-success=check
       - check-success~=codeql \([a-z]*\)
       - check-success=dependency-review
       - check-success=gitleaks
       - check-success~=playwright-tests \(\d, \d\)
       - check-success=zizmor
-      - "#check-success>=15"
+      - "#check-success>=16"
     actions:
       review:
         type: APPROVE
@@ -17,13 +18,14 @@ pull_request_rules:
   - name: automatic approval for Renovate pull requests
     conditions:
       - author=renovate[bot]
+      - check-success=amd64
       - check-success=check
       - check-success~=codeql \([a-z]*\)
       - check-success=dependency-review
       - check-success=gitleaks
       - check-success~=playwright-tests \(\d, \d\)
       - check-success=zizmor
-      - "#check-success>=15"
+      - "#check-success>=16"
     actions:
       review:
         type: APPROVE
@@ -31,13 +33,14 @@ pull_request_rules:
   # merge
   - name: Automatically merge when GitHub Actions jobs succeed
     conditions:
+      - check-success=amd64
       - check-success=check
       - check-success~=codeql \([a-z]*\)
       - check-success=dependency-review
       - check-success=gitleaks
       - check-success~=playwright-tests \(\d, \d\)
       - check-success=zizmor
-      - "#check-success>=15"
+      - "#check-success>=16"
       - "#approved-reviews-by>=1"
     actions:
       merge:
