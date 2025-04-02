@@ -5,13 +5,13 @@ pull_request_rules:
       - author=dsm23
       - check-success=amd64
       - check-success=check
-      - check-success~=codeql \([a-z]*\)
+      - check-success=codeql (javascript)
+      - check-success=codeql (typescript)
       - check-success=dependency-review
       - check-success=gitleaks
-      - check-success~=playwright-tests \(\d, \d\)
+      - check-success=playwright-tests
       - check-success=pr-title
       - check-success=zizmor
-      - "#check-success>=17"
     actions:
       review:
         type: APPROVE
@@ -21,13 +21,13 @@ pull_request_rules:
       - author=renovate[bot]
       - check-success=amd64
       - check-success=check
-      - check-success~=codeql \([a-z]*\)
+      - check-success=codeql (javascript)
+      - check-success=codeql (typescript)
       - check-success=dependency-review
       - check-success=gitleaks
-      - check-success~=playwright-tests \(\d, \d\)
+      - check-success=playwright-tests
       - check-success=pr-title
       - check-success=zizmor
-      - "#check-success>=17"
     actions:
       review:
         type: APPROVE
@@ -37,13 +37,13 @@ pull_request_rules:
     conditions:
       - check-success=amd64
       - check-success=check
-      - check-success~=codeql \([a-z]*\)
+      - check-success=codeql (javascript)
+      - check-success=codeql (typescript)
       - check-success=dependency-review
       - check-success=gitleaks
-      - check-success~=playwright-tests \(\d, \d\)
+      - check-success=playwright-tests
       - check-success=pr-title
       - check-success=zizmor
-      - "#check-success>=17"
       - "#approved-reviews-by>=1"
     actions:
       merge:
