@@ -10,7 +10,7 @@ on:
   workflow_dispatch: null
 
 jobs:
-  playwright-tests:
+  playwright-test-shard:
     timeout-minutes: 60
     runs-on: ubuntu-24.04
     strategy:
@@ -57,3 +57,11 @@ jobs:
           name: playwright-report-${{ matrix.shardIndex }}
           path: playwright-report/
           retention-days: 1
+
+  playwright-tests:
+    runs-on: ubuntu-24.04
+    needs:
+      - playwright-test-shard
+    steps:
+      - if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
+        run: exit 1
