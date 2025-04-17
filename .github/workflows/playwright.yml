@@ -19,7 +19,7 @@ jobs:
         shardIndex: [1, 2, 3, 4, 5, 6, 7, 8, 9]
         shardTotal: [9]
     container:
-      image: mcr.microsoft.com/playwright:v1.51.1-noble@sha256:146d046a8d79a1b3a87596c4457b0b1c47f811bf4fc2cc1b99e873ae7f1cbbbd
+      image: mcr.microsoft.com/playwright:v1.52.0-noble@sha256:a021500a801bab0611049217ffad6b9697d827205c15babb86a53bc1a61c02d5
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@c6295a65d1254861815972266d5933fd6e532bdf # v2.11.1
