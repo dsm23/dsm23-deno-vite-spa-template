@@ -24,7 +24,7 @@
     "tailwind-merge": "npm:tailwind-merge@3.0.2",
     "tailwindcss": "npm:tailwindcss@4.0.15",
     "tailwindcss-animate": "npm:tailwindcss-animate@1.0.7",
-    "vite": "npm:vite@6.2.3",
+    "vite": "npm:vite@6.2.7",
     "~/": "./src/"
   },
   "nodeModulesDir": "auto",
