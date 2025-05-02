@@ -18,7 +18,7 @@
     "cz-conventional-changelog": "npm:cz-conventional-changelog@3.3.0",
     "husky": "npm:husky@9.1.7",
     "lint-staged": "npm:lint-staged@15.5.0",
-    "lucide-react": "npm:lucide-react@0.483.0",
+    "lucide-react": "npm:lucide-react@0.507.0",
     "react": "npm:react@19.0.0",
     "react-dom": "npm:react-dom@19.0.0",
     "tailwind-merge": "npm:tailwind-merge@3.0.2",
