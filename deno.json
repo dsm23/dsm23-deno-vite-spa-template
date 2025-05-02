@@ -17,7 +17,7 @@
     "commitizen": "npm:commitizen@4.3.1",
     "cz-conventional-changelog": "npm:cz-conventional-changelog@3.3.0",
     "husky": "npm:husky@9.1.7",
-    "lint-staged": "npm:lint-staged@15.5.0",
+    "lint-staged": "npm:lint-staged@15.5.1",
     "lucide-react": "npm:lucide-react@0.483.0",
     "react": "npm:react@19.0.0",
     "react-dom": "npm:react-dom@19.0.0",
