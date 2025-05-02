@@ -14,19 +14,6 @@
   "packageRules": [
     {
       "extends": [
-        "packages:eslint"
-      ],
-      "groupName": "eslint packages"
-    },
-    {
-      "groupName": "prettier packages",
-      "matchPackageNames": [
-        "prettier**",
-        "@ianvs/prettier-plugin-sort-imports"
-      ]
-    },
-    {
-      "extends": [
         "packages:react"
       ],
       "groupName": "react packages"
@@ -44,12 +31,6 @@
         "@playwright/test",
         "npm:@playwright/test",
         "mcr.microsoft.com/playwright"
-      ],
-      "matchUpdateTypes": [
-        "digest",
-        "patch",
-        "minor",
-        "major"
       ]
     }
   ],
@@ -67,7 +48,6 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "^import_map.json$",
         "^deno.jsonc?$"
       ],
       "matchStrings": [
@@ -88,7 +68,6 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "^import_map.json$",
         "^deno.jsonc?$"
       ],
       "matchStrings": [
@@ -96,6 +75,17 @@
         "['\"].+?['\"]\\s*:\\s*['\"]npm:(?<depName>.+?)@v?(?<currentValue>(?:0|[1-9]\\d*)(?:\\.(?:0|[1-9]\\d*)(?:\\.(?:0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)?)?)[/\"']",
         "['\"].+?['\"]\\s*:\\s*['\"]https?://unpkg.com/(?<depName>(?:@[^/\"']*/)?[^/\"']*?)@v?(?<currentValue>(?:0|[1-9]\\d*)(?:\\.(?:0|[1-9]\\d*)(?:\\.(?:0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)?)?)[/\"']",
         "['\"].+?['\"]\\s*:\\s*['\"]https?://cdn.skypack.dev/(?<depName>(?:@[^/\"']*/)?[^/\"']*?)@v?(?<currentValue>(?:0|[1-9]\\d*)(?:\\.(?:0|[1-9]\\d*)(?:\\.(?:0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)?)?)[?/\"']"
+      ],
+      "datasourceTemplate": "npm"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^deno.lock$"
+      ],
+      "matchStrings": [
+        "['\"].+?['\"]\\s*:\\s*['\"]npm:(?<depName>.+?)@(?<currentValue>(?:0|[1-9]\\d*)(?:\\.(?:0|[1-9]\\d*)(?:\\.(?:0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)?)?)\":\\s*\"(?:0|[1-9]\\d*)(?:\\.(?:0|[1-9]\\d*)(?:\\.(?:0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)?)?[^\\\"]*?\"",
+        "['\"].+?['\"]\\s*:\\s*['\"]npm:(?<depName>.+?)@(?<currentValue>(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*))\":\\s*\"(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)[^\\\"]*?\""
       ],
       "datasourceTemplate": "npm"
     },
