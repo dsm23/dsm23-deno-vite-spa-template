@@ -15,9 +15,9 @@
     {
       "customType": "regex",
       "managerFilePatterns": ["/(^|/|\\.)dvmrc$/"],
-      "depNameTemplate": "deno",
-      "datasourceTemplate": "npm",
-      "matchStrings": ["(?<currentValue>\\S+)\\s"]
+      "depNameTemplate": "denoland/deno",
+      "datasourceTemplate": "github-releases",
+      "matchStrings": ["(?<currentValue>\\d+.\\d+.\\d+)\\s"]
     }
   ],
   "packageRules": [
