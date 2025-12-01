@@ -1,0 +1,20 @@
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      run: deno fmt --check {staged_files}
+
+    eslint:
+      run: deno lint {staged_files}
+      glob:
+        - "*.ts"
+        - "*.js"
+        - "*.tsx"
+        - "*.jsx"
+        - "*.md"
+        - "*.mdx"
+
+commit-msg:
+  commands:
+    commitlint:
+      run: deno run -A npm:@commitlint/cli --edit {1}
