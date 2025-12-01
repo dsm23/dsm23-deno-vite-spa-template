@@ -5,8 +5,6 @@ FROM denoland/deno:alpine-2.5.6@sha256:b9c7668c78fe393893f00b0fc8ba3d0f2e1bbb8f8
 
 # Install dependencies only when needed
 FROM base AS deps
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-# RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Copy package manager lock files
@@ -27,7 +25,7 @@ COPY . .
 RUN deno task build
 
 # Stage 3: Production image
-FROM nginx:1.27.3-alpine3.20-slim@sha256:5a56ae385906c5b43ccc99379bce883aa93dc0556d7f705ba501d819925e8fa1 AS runner
+FROM nginx:1.29.3-alpine-slim@sha256:4c175d0d849aae0e0eedc64d718ef6323bed2bc68ee673e2d0a1bd5d501d0e5f AS runner
 
 # Copy built static files to nginx's default public folder
 COPY --from=builder /app/dist /usr/share/nginx/html
@@ -35,14 +33,12 @@ COPY --from=builder /app/nginx/nginx.conf /etc/nginx/templates/default.conf.temp
 
 # implement changes required to run NGINX as an unprivileged user
 RUN sed -i '/user  nginx;/d' /etc/nginx/nginx.conf \
-    && sed -i 's,/var/run/nginx.pid,/tmp/nginx.pid,' /etc/nginx/nginx.conf \
-# nginx user must own the cache and etc directory to write cache and tweak the nginx config
-    && chown -R nginx /var/cache/nginx \
-    && chmod -R g+w /var/cache/nginx \
-    && chown -R nginx /etc/nginx \
-    && chmod -R g+w /etc/nginx \
-# change the placeholder js file in html
-    && chown -R nginx /usr/share/nginx/html
+  && sed -i 's,\(/var\)\{0\,1\}/run/nginx.pid,/tmp/nginx.pid,' /etc/nginx/nginx.conf \
+  # nginx user must own the cache and etc directory to write cache and tweak the nginx config
+  && chown -R nginx /var/cache/nginx \
+  && chmod -R g+w /var/cache/nginx \
+  && chown -R nginx /etc/nginx \
+  && chmod -R g+w /etc/nginx
 
 USER nginx
 
