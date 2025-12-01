@@ -24,6 +24,9 @@ dist-ssr
 *.sln
 *.sw?
 
+# lefthook
+lefthook-local.yml
+
 # playwright
 /test-results/
 /playwright-report/

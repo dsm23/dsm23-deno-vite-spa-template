@@ -7,4 +7,3 @@
 !deno.lock
 !index.html
 !vite.config.ts
-!patches/
