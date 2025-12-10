@@ -1,7 +1,7 @@
 # syntax=docker.io/docker/dockerfile:1@sha256:b6afd42430b15f2d2a4c5a02b919e98a525b785b1aaff16747d2f623364e39b6
 
 # Stage 1: Base image for dependencies and build
-FROM denoland/deno:alpine-2.5.6@sha256:b9c7668c78fe393893f00b0fc8ba3d0f2e1bbb8f891a79a963b3b713ab110767 AS base
+FROM denoland/deno:alpine-2.6.0@sha256:560c09b53106f2a9f45100bb105a5eb87ddb7d547f275caba7f37ab9b574a2fa AS base
 
 # Install dependencies only when needed
 FROM base AS deps
