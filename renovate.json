@@ -19,6 +19,8 @@
       "matchStrings": ["(?<currentValue>\\d+.\\d+.\\d+)\\s"]
     }
   ],
+  "internalChecksFilter": "strict",
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "extends": ["packages:react"],
