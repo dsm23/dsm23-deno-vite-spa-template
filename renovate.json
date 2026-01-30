@@ -19,9 +19,18 @@
       "matchStrings": ["(?<currentValue>\\d+.\\d+.\\d+)\\s"]
     }
   ],
-  "internalChecksFilter": "strict",
-  "minimumReleaseAge": "3 days",
   "packageRules": [
+    {
+      "matchDatasources": [
+        "github-releases",
+        "github-tags",
+        "jsr",
+        "node-version",
+        "npm"
+      ],
+      "internalChecksFilter": "strict",
+      "minimumReleaseAge": "3 days"
+    },
     {
       "extends": ["packages:react"],
       "groupName": "react packages"
