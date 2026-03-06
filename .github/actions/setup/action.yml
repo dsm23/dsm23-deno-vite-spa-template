@@ -1,0 +1,45 @@
+name: Setup deno action
+description: |
+  Configures deno, cache, performs deno install
+
+inputs:
+  deno-run-install:
+    description: Whether to run deno install
+    required: false
+    default: "true"
+  deno-restore-cache:
+    description: Whether to restore cache
+    required: false
+    default: "true"
+  deno-install-cache-key:
+    description: The cache key for the deno install cache
+    required: false
+    default: ${{ runner.os }}-nextjs-${{ hashFiles('**/deno.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+
+runs:
+  using: composite
+  steps:
+    - name: Restore deno install cache
+      if: ${{ inputs.deno-restore-cache == 'true' }}
+      uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+      with:
+        # See here for caching with `deno` https://github.com/actions/cache/blob/main/examples.md#deno
+        path: |
+          ~/.deno
+          ~/.cache/deno
+          ${{ github.workspace }}/node_modules/.vite
+        # Generate a new cache whenever packages or source files change.
+        key: ${{ inputs.deno-install-cache-key }}
+        # If source files changed but packages didn't, rebuild from a prior cache.
+        restore-keys: |
+          ${{ runner.os }}-nextjs-${{ hashFiles('**/deno.lock') }}-
+
+    - name: Setup deno
+      uses: denoland/setup-deno@e95548e56dfa95d4e1a28d6f422fafe75c4c26fb # v2.0.3
+      with:
+        deno-version-file: .dvmrc
+
+    - name: Install dependencies
+      if: ${{ inputs.deno-run-install == 'true' }}
+      shell: bash
+      run: deno install --frozen

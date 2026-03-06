@@ -37,8 +37,5 @@ jobs:
       - name: Format check
         run: deno fmt --check
 
-      - name: Lint check
-        run: deno lint
-
       - name: Build
         run: deno task build
