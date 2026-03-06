@@ -6,6 +6,7 @@ shared:
     - check-success=codeql (typescript)
     - check-success=dependency-review
     - check-success=gitleaks
+    - check-success=lint
     - check-success=playwright-tests
     - check-success=renovate
     - check-success=zizmor
