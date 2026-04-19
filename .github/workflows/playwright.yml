@@ -22,7 +22,7 @@ jobs:
         shardIndex: [1, 2, 3, 4, 5, 6, 7, 8, 9]
         shardTotal: [9]
     container:
-      image: gwennlbh/playwright-bun:v1.58.2@sha256:4672fc0a5e52d6ec7f3c7047cd34a1e7ad701bd9408056befc4629a91bd01433
+      image: gwennlbh/playwright-bun:v1.59.1@sha256:2ea6caacfa3465e6c6ed641cb0ceea0b5d0b467d16398f52caf278e07e0809c3
       options: --user 1001
     steps:
       - name: Harden Runner
