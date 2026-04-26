@@ -9,6 +9,7 @@ shared:
     - check-success=lint
     - check-success=playwright-tests
     - check-success=renovate
+    - check-success=types
     - check-success=zizmor
     - or:
         - check-success = renovate/stability-days
