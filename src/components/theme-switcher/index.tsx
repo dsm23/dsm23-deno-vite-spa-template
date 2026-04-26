@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Laptop, Moon, Sun } from "lucide-react";
-import { Button } from "~/components/button/index.tsx";
+import { buttonVariants } from "~/components/ui/button/index.tsx";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "~/components/dropdown-menu/index.tsx";
+} from "~/components/ui/dropdown-menu/index.tsx";
 import { useTheme } from "~/components/theme-provider/index.tsx";
 import type { Theme } from "~/components/theme-provider/index.tsx";
 
@@ -28,33 +28,33 @@ const ThemeSwitcher = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm">
-          <span className="sr-only">Theme switcher</span>
-          {theme === "light"
-            ? (
-              <Sun
-                key="light"
-                size={ICON_SIZE}
-                className="text-muted-foreground"
-              />
-            )
-            : theme === "dark"
-            ? (
-              <Moon
-                key="dark"
-                size={ICON_SIZE}
-                className="text-muted-foreground"
-              />
-            )
-            : (
-              <Laptop
-                key="system"
-                size={ICON_SIZE}
-                className="text-muted-foreground"
-              />
-            )}
-        </Button>
+      <DropdownMenuTrigger
+        className={buttonVariants({ variant: "ghost", size: "sm" })}
+      >
+        <span className="sr-only">Theme switcher</span>
+        {theme === "light"
+          ? (
+            <Sun
+              key="light"
+              size={ICON_SIZE}
+              className="text-muted-foreground"
+            />
+          )
+          : theme === "dark"
+          ? (
+            <Moon
+              key="dark"
+              size={ICON_SIZE}
+              className="text-muted-foreground"
+            />
+          )
+          : (
+            <Laptop
+              key="system"
+              size={ICON_SIZE}
+              className="text-muted-foreground"
+            />
+          )}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-fit" align="start">
         <DropdownMenuRadioGroup
