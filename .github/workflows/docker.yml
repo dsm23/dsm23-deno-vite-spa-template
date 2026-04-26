@@ -14,8 +14,7 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: "dsm23/dsm23-deno-vite-spa-template"
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   amd64:
