@@ -1,6 +1,6 @@
 {
   "imports": {
-    "@axe-core/playwright": "npm:@axe-core/playwright@4.11.0",
+    "@axe-core/playwright": "npm:@axe-core/playwright@4.11.2",
     "@commitlint/cli": "npm:@commitlint/cli@20.1.0",
     "@commitlint/config-conventional": "npm:@commitlint/config-conventional@20.0.0",
     "@commitlint/types": "npm:@commitlint/types@20.0.0",
