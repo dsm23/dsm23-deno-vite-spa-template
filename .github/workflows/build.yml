@@ -1,4 +1,4 @@
-name: Check
+name: Build check
 
 on:
   push:
@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 jobs:
-  check:
+  build:
     runs-on: ubuntu-24.04
     steps:
       - name: Harden Runner
@@ -26,16 +26,8 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup deno
-        uses: denoland/setup-deno@667a34cdef165d8d2b2e98dde39547c9daac7282 # v2.0.4
-        with:
-          deno-version-file: .dvmrc
+      - name: Deno setup
+        uses: ./.github/actions/setup
 
-      - name: Install dependencies
-        run: deno install --frozen
-
-      - name: Format check
-        run: deno fmt --check
-
-      - name: Build
+      - name: Lint check
         run: deno task build

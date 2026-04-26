@@ -1,11 +1,12 @@
 shared:
   common: &common_checks
     - check-success=amd64
-    - check-success=check
+    - check-success=build
     - check-success=codeql (javascript)
     - check-success=codeql (typescript)
     - check-success=dependency-review
     - check-success=gitleaks
+    - check-success=format
     - check-success=lint
     - check-success=playwright-tests
     - check-success=renovate
