@@ -9,8 +9,7 @@ on:
       - main
   workflow_dispatch: null
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   playwright-test-shard:
