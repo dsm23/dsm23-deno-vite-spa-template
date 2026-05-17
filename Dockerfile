@@ -25,7 +25,7 @@ COPY . .
 RUN deno task build
 
 # Stage 3: Production image
-FROM nginx:1.30.0-alpine-slim@sha256:2fb5d772cea6ef1a8dab525df1b9485289eee167d26af9613fce27a12c060caa AS runner
+FROM nginx:1.31.0-alpine-slim@sha256:9e666aeefa9801445bc2ff4994c48d314736dae4cf1f551ace03e38ea0373552 AS runner
 
 # Copy built static files to nginx's default public folder
 COPY --from=builder /app/dist /usr/share/nginx/html
