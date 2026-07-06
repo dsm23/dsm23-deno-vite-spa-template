@@ -21,7 +21,7 @@ jobs:
         shardIndex: [1, 2, 3, 4, 5, 6, 7, 8, 9]
         shardTotal: [9]
     container:
-      image: gwennlbh/playwright-bun:v1.61.0@sha256:37dbfd3bb8a099b85b064e5b62f98690af62548c3114f8f796ffc99f517abc52
+      image: gwennlbh/playwright-bun:v1.61.0@sha256:614a9a8e321c1f03be427a2a323d382f5dbd84479a6dffe2ada6c95513304e0c
       options: --user 1001
     steps:
       - name: Git Checkout
