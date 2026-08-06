@@ -1,3 +1,4 @@
+# queue rule 'dep-update': `allow_queue_branch_edit` was turned off. It now requires `merge_method: merge-batch` or `merge_method: fast-forward`.
 shared:
   common: &common_checks
     - check-success=amd64
@@ -40,7 +41,6 @@ merge_queue:
 
 queue_rules:
   - name: dep-update
-    allow_queue_branch_edit: true
     batch_size: 5
     batch_max_wait_time: 5 min
     queue_conditions: &queue_conditions
